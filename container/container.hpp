@@ -57,6 +57,14 @@ public:
 
 class ClearableContainer : public virtual Container {
 
+private:
+
+  // ...
+
+protected:
+
+  // ...
+
 public:
 
   // Destructor
@@ -86,6 +94,14 @@ public:
 /* ************************************************************************** */
 
 class ResizableContainer : public virtual ClearableContainer {
+
+private:
+
+  // ...
+
+protected:
+
+  // ...
 
 public:
 
