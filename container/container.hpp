@@ -13,6 +13,10 @@ namespace lasd {
 
 class Container {
 
+private:
+
+  // ...
+
 protected:
 
   unsigned long size = 0;
