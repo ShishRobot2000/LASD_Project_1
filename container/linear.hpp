@@ -41,32 +41,32 @@ public:
   /* ************************************************************************ */
 
   // Comparison operators
-  virtual bool operator==(const LinearContainer&) const = 0;
-  virtual bool operator!=(const LinearContainer&) const = 0;
+  virtual bool operator==(const LinearContainer&) const noexcept;
+  virtual bool operator!=(const LinearContainer&) const noexcept;
 
   /* ************************************************************************ */
 
   // Specific member functions
   virtual const Data& operator[](unsigned long) const = 0; // (non-mutable version; throws std::out_of_range)
 
-  virtual const Data& Front() const = 0; // throws std::length_error if empty
-  virtual const Data& Back() const = 0;  // throws std::length_error if empty
+  virtual const Data& Front() const; // throws std::length_error if empty
+  virtual const Data& Back() const;  // throws std::length_error if empty
 
   /* ************************************************************************ */
 
   // Specific member function (inherited from TraversableContainer)
   using typename TraversableContainer<Data>::TraverseFun;
-  virtual void Traverse(TraverseFun) const override = 0;
+  virtual void Traverse(TraverseFun) const override;
 
   /* ************************************************************************ */
 
   // Specific member function (inherited from PreOrderTraversableContainer)
-  virtual void PreOrderTraverse(TraverseFun) const override = 0;
+  virtual void PreOrderTraverse(TraverseFun) const override;
 
   /* ************************************************************************ */
 
   // Specific member function (inherited from PostOrderTraversableContainer)
-  virtual void PostOrderTraverse(TraverseFun) const override = 0;
+  virtual void PostOrderTraverse(TraverseFun) const override;
 
 };
 
@@ -89,7 +89,12 @@ protected:
   // ...
 
 public:
-
+  
+  // Bring base class versions into scope to avoid hiding warnings
+  using LinearContainer<Data>::operator[];
+  using LinearContainer<Data>::Front;
+  using LinearContainer<Data>::Back;
+  
   // Destructor
   virtual ~MutableLinearContainer() = default;
 
@@ -105,24 +110,24 @@ public:
 
   // Specific member functions
   virtual Data& operator[](unsigned long) = 0; // (mutable version; throws std::out_of_range)
-  virtual Data& Front() = 0;                   // throws std::length_error if empty
-  virtual Data& Back() = 0;                    // throws std::length_error if empty
+  virtual Data& Front();                   // throws std::length_error if empty
+  virtual Data& Back();                    // throws std::length_error if empty
 
   /* ************************************************************************ */
 
   // Specific member function (inherited from MappableContainer)
   using typename MappableContainer<Data>::MapFun;
-  virtual void Map(MapFun) override = 0;
+  virtual void Map(MapFun) override;
 
   /* ************************************************************************ */
 
   // Specific member function (inherited from PreOrderMappableContainer)
-  virtual void PreOrderMap(MapFun) override = 0;
+  virtual void PreOrderMap(MapFun) override;
 
   /* ************************************************************************ */
 
   // Specific member function (inherited from PostOrderMappableContainer)
-  virtual void PostOrderMap(MapFun) override = 0;
+  virtual void PostOrderMap(MapFun) override;
 
 };
 
@@ -138,7 +143,9 @@ private:
 
 protected:
 
-  // ...
+  // Auxiliary member functions
+  void MergeSort(unsigned long left, unsigned long right);
+  void Merge(unsigned long left, unsigned long mid, unsigned long right);
 
 public:
 
@@ -156,13 +163,7 @@ public:
   /* ************************************************************************ */
 
   // Specific member function
-  virtual void Sort() = 0;
-
-protected:
-
-  // Auxiliary member functions
-
-  // ...
+  virtual void Sort();
 
 };
 
