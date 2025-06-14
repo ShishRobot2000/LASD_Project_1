@@ -4,6 +4,7 @@
 /* ************************************************************************** */
 
 #include "mappable.hpp"
+#include "traversable.hpp"
 
 /* ************************************************************************** */
 
@@ -48,6 +49,7 @@ public:
 
   // Specific member functions
   virtual const Data& operator[](unsigned long) const = 0; // (non-mutable version; throws std::out_of_range)
+
 
   virtual const Data& Front() const; // throws std::length_error if empty
   virtual const Data& Back() const;  // throws std::length_error if empty
@@ -144,8 +146,6 @@ private:
 protected:
 
   // Auxiliary member functions
-  void MergeSort(unsigned long left, unsigned long right);
-  void Merge(unsigned long left, unsigned long mid, unsigned long right);
 
 public:
 
@@ -174,3 +174,4 @@ public:
 #include "linear.cpp"
 
 #endif
+
