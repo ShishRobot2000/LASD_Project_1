@@ -19,10 +19,3 @@ Il progetto è suddiviso in due parti, ognuna con strutture dati concrete:
 ### 🔺 Parte 2 – Heap e Code di Priorità
 - `HeapVec`
 - `PQHeap`
-
-## 🧮 Valutazioni
-
-| Parte | Voto     |
-|-------|----------|
-| 1     | 30/30    |
-| 2     | ⏳ In attesa |
