@@ -6,10 +6,14 @@ namespace lasd {
 
 // Costruttore da TraversableContainer
 template <typename Data>
-PQHeap<Data>::PQHeap(const TraversableContainer<Data>& cont) : HeapVec<Data>(cont) {}
+PQHeap<Data>::PQHeap(const TraversableContainer<Data>& cont) : HeapVec<Data>(cont) {
+  this->capacity = cont.Size();
+}
 
 template <typename Data>
-PQHeap<Data>::PQHeap(MappableContainer<Data>&& cont) : HeapVec<Data>(std::move(cont)) {}
+PQHeap<Data>::PQHeap(MappableContainer<Data>&& cont) : HeapVec<Data>(std::move(cont)) {
+  this->capacity = cont.Size();
+}
 
 /* ************************************************************************** */
 
