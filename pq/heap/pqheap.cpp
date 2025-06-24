@@ -10,6 +10,7 @@ PQHeap<Data>::PQHeap(const TraversableContainer<Data>& cont) : HeapVec<Data>(con
   this->capacity = cont.Size();
 }
 
+// Costruttore da MappableContainer
 template <typename Data>
 PQHeap<Data>::PQHeap(MappableContainer<Data>&& cont) : HeapVec<Data>(std::move(cont)) {
   this->capacity = cont.Size();
