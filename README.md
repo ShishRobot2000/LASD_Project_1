@@ -19,3 +19,7 @@ Il progetto è suddiviso in due parti, ognuna con strutture dati concrete:
 ### 🔺 Parte 2 – Heap e Code di Priorità
 - `HeapVec`
 - `PQHeap`
+
+---
+
+> Progetto sviluppato a fini accademici – Università degli Studi di Napoli  
