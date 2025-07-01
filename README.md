@@ -3,8 +3,8 @@
 Questo progetto è stato sviluppato per il corso di **Laboratorio di Algoritmi e Strutture Dati** dell’Università degli Studi di Napoli Federico II, anno accademico **2024/2025**.
 
 Include l’implementazione in C++ delle strutture dati richieste, insieme ai test ufficiali forniti dal corso e a test personali aggiuntivi:
-- `zlasdtest.cpp` – test ufficiali
-- `zmytest.cpp` – test personali completi
+- `zlasdtest` – test ufficiali
+- `zmytest` – test personali completi
 
 ## 🔧 Strutture implementate
 
